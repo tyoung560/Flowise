@@ -81,7 +81,7 @@ export class App {
         this.app.use(express.urlencoded({ limit: '50mb', extended: true }))
 
         // Allow access from *
-        this.app.use(cors())
+        this.app.use(cors({ credentials: true, origin: 'http://204.48.18.249:3000' }))
 
         if (process.env.FLOWISE_USERNAME && process.env.FLOWISE_PASSWORD) {
             const username = process.env.FLOWISE_USERNAME
